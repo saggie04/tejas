@@ -9,38 +9,39 @@
 </head>
 <body>
 
-<!-- HEADER -->
 <header>
   <div class="container header-container">
+    
     <img src="images/logo.jpg" alt="Tejas Agri Seeds Logo" class="logo" />
-    <nav>
-  <!-- Hamburger icon (visible only on mobile) -->
-  <div class="hamburger">
-    <span></span>
-    <span></span>
-    <span></span>
-  </div>
 
-  <!-- Navigation links -->
-  <ul class="nav-links">
-    <li><a href="index.html" class="active">Home</a></li>
-    <li><a href="about.html">About Us</a></li>
-    <li><a href="vegetable-seeds.html">Vegetable Seeds</a></li>
-    <li><a href="contact.html">Contact</a></li>
-  </ul>
-</nav>
+    <nav class="main-nav">
+
+      <!-- HAMBURGER (MOBILE ONLY) -->
+      <button class="hamburger" id="hamburgerBtn" aria-label="Menu">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+
+      <!-- NAV LINKS -->
+      <ul class="nav-links" id="navLinks">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html">About Us</a></li>
+        <li><a href="vegetable-seeds.html">Vegetable Seeds</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+
+    </nav>
 
     <div class="nav-icons">
-  <i class="fas fa-search"></i>
-  <i class="fas fa-user"></i>
-
-  <a href="cart.html" aria-label="Cart">
-    <i class="fas fa-shopping-cart"></i>
-  </a>
-</div>
+      <a href="cart.html" aria-label="Cart">
+        <i class="fas fa-shopping-cart"></i>
+      </a>
+    </div>
 
   </div>
 </header>
+
 <button id="logoutBtn" class="logout-btn" style="display:none;">
   Logout
 </button>

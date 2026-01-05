@@ -1151,20 +1151,22 @@ window.addEventListener("pageshow", () => {
   document.querySelector(".nav-links")?.classList.remove("active");
 });
 document.addEventListener("DOMContentLoaded", () => {
-  const hamburger = document.querySelector(".hamburger");
-  const nav = document.querySelector(".nav-links");
+  const hamburger = document.getElementById("hamburgerBtn");
+  const navLinks = document.getElementById("navLinks");
 
-  if (!hamburger || !nav) return;
+  if (!hamburger || !navLinks) return;
 
   hamburger.addEventListener("click", () => {
-    nav.classList.toggle("active");
+    navLinks.classList.toggle("active");
     document.body.classList.toggle("nav-open");
   });
 
-  nav.querySelectorAll("a").forEach(link => {
+  // Close menu when link clicked
+  navLinks.querySelectorAll("a").forEach(link => {
     link.addEventListener("click", () => {
-      nav.classList.remove("active");
+      navLinks.classList.remove("active");
       document.body.classList.remove("nav-open");
     });
   });
 });
+

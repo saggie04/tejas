@@ -2739,3 +2739,71 @@ footer small {
     overflow: hidden;
   }
 }
+/* ================= MOBILE NAV – FINAL FIX ================= */
+
+/* Desktop default */
+.hamburger {
+  display: none;
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+
+.hamburger span {
+  display: block;
+  width: 26px;
+  height: 3px;
+  background: #145428;
+  margin: 5px 0;
+  border-radius: 2px;
+}
+
+/* Desktop nav */
+.nav-links {
+  display: flex;
+  gap: 2rem;
+}
+
+/* ---------- MOBILE ---------- */
+@media (max-width: 768px) {
+
+  .hamburger {
+    display: block;
+    z-index: 10001;
+  }
+
+  .nav-links {
+    position: fixed;
+    top: 0;
+    right: -100%;
+    width: 75%;
+    max-width: 320px;
+    height: 100vh;
+
+    background: #ffffff;
+    padding: 5rem 2rem;
+    flex-direction: column;
+    gap: 1.6rem;
+
+    transition: right 0.3s ease;
+    z-index: 10000;
+
+    pointer-events: none;
+  }
+
+  .nav-links.active {
+    right: 0;
+    pointer-events: auto;
+  }
+
+  .nav-links a {
+    font-size: 1.2rem;
+    font-weight: 600;
+    color: #145428;
+    text-decoration: none;
+  }
+
+  body.nav-open {
+    overflow: hidden;
+  }
+}
