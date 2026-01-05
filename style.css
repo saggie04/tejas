@@ -2456,3 +2456,213 @@ footer {
 .hero * {
   overflow: visible;
 }
+/* =====================================================
+   FINAL STABILITY PATCH — MOBILE + HERO (DO NOT EDIT)
+   ===================================================== */
+
+/* 1. GLOBAL SAFETY — prevent zoom & overflow */
+html, body {
+  max-width: 100%;
+  overflow-x: hidden !important;
+}
+
+* {
+  max-width: 100%;
+  box-sizing: border-box;
+}
+
+/* 2. KILL ALL GLOBAL HERO / BODY BACKGROUND HACKS */
+body {
+  background: #f5f8f4 !important;
+  perspective: none !important;
+}
+
+body::before {
+  display: none !important;
+}
+
+/* 3. RESTORE CLASSIC HERO (TOP SECTION ONLY) */
+.hero {
+  background-image: url("images/hero.jpg") !important;
+  background-size: cover !important;
+  background-position: center center !important;
+  background-repeat: no-repeat !important;
+
+  position: relative;
+  min-height: 70vh;
+  padding: 6rem 1.5rem;
+  overflow: hidden;
+}
+
+/* Clean readable overlay */
+.hero::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    rgba(0,0,0,0.25),
+    rgba(0,0,0,0.45)
+  );
+  z-index: 1;
+}
+
+/* Hero content always readable */
+.hero-content {
+  position: relative;
+  z-index: 2;
+  max-width: 900px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+/* 4. REMOVE FLOATING / 3D / BREATHING EFFECTS */
+header,
+.hero-content,
+.products,
+.about-section,
+.cart-wrapper,
+footer,
+.product-card,
+.variety-card,
+.info-card,
+.cart-item,
+.learn-more-btn,
+.checkout-btn {
+  animation: none !important;
+  transform: none !important;
+  backdrop-filter: none !important;
+  -webkit-backdrop-filter: none !important;
+}
+
+/* 5. NORMAL SECTION BACKGROUNDS */
+.products,
+.about-section,
+.contact-grid,
+.cart-wrapper {
+  background: #f5f8f4 !important;
+  box-shadow: none !important;
+  border-radius: 0 !important;
+}
+
+/* 6. NAV FIX — stop sideways menu overflow */
+header {
+  width: 100%;
+  left: 0;
+  right: 0;
+}
+
+/* =====================
+   MOBILE FIXES
+===================== */
+@media (max-width: 768px) {
+
+  /* 7. HERO MOBILE FIX */
+  .hero {
+    min-height: 85vh;
+    padding: 6rem 1rem 4rem;
+  }
+
+  .hero h1 {
+    font-size: 1.9rem;
+    line-height: 1.25;
+  }
+
+  .hero p {
+    font-size: 1rem;
+    margin-bottom: 1.2rem;
+  }
+
+  /* 8. SECTIONS — full width, no zoom */
+  .products,
+  .about-section,
+  .cart-wrapper,
+  .contact-grid,
+  footer {
+    width: 100%;
+    margin: 1.5rem 0;
+    padding: 1.5rem;
+  }
+
+  /* 9. CARDS STACK CLEANLY */
+  .product-grid,
+  .card-grid {
+    grid-template-columns: 1fr;
+    gap: 1.4rem;
+  }
+
+  .product-card,
+  .variety-card,
+  .info-card,
+  .cart-item {
+    width: 100%;
+    border-radius: 14px;
+    box-shadow: 0 8px 22px rgba(0,0,0,0.12);
+  }
+
+  /* 10. CART FIX */
+  .cart-item {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.6rem;
+  }
+
+  .cart-item button {
+    align-self: flex-end;
+  }
+
+  .cart-summary {
+    flex-direction: column;
+    gap: 1rem;
+  }
+
+  .checkout-btn {
+    width: 100%;
+  }
+
+  /* 11. MOBILE NAV PANEL WIDTH */
+  .nav-links {
+    width: 80%;
+    max-width: 280px;
+  }
+}
+
+/* 12. PERFORMANCE SAFETY */
+@media (prefers-reduced-motion: reduce) {
+  * {
+    animation: none !important;
+    transition: none !important;
+  }
+}
+/* =====================================================
+   FOOTER COPYRIGHT VISIBILITY FIX (2026 ISSUE)
+   ===================================================== */
+
+/* Ensure footer itself is dark enough */
+footer {
+  background: linear-gradient(180deg, #134f27, #0f3d22) !important;
+}
+
+/* Force readable footer text */
+footer,
+footer p,
+footer span,
+footer small {
+  color: rgba(255, 255, 255, 0.9) !important;
+  font-weight: 500;
+}
+
+/* Specifically target copyright line */
+footer p:last-child,
+footer small {
+  font-size: 0.9rem;
+  opacity: 0.85;
+  margin-top: 0.6rem;
+}
+
+/* Mobile safety */
+@media (max-width: 768px) {
+  footer {
+    text-align: center;
+    padding: 1.2rem;
+  }
+}
