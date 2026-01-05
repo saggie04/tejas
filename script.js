@@ -1146,3 +1146,7 @@ document.addEventListener("DOMContentLoaded", () => {
     yearEl.textContent = new Date().getFullYear();
   }
 });
+// Auto-close mobile nav on page change
+window.addEventListener("pageshow", () => {
+  document.querySelector(".nav-links")?.classList.remove("active");
+});
