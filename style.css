@@ -2272,3 +2272,116 @@ body::before {
     width: 100%;
   }
 }
+/* ======================================================
+   MOBILE FIX – CLEAN, READABLE, PROFESSIONAL
+   ====================================================== */
+@media (max-width: 768px) {
+
+  /* 1. Reset body background behavior on mobile */
+  body {
+    background-attachment: scroll !important;
+    background-position: center top;
+  }
+
+  /* 2. Header: stop floating chaos */
+  header {
+    position: sticky;
+    top: 0;
+    margin: 0.8rem;
+    border-radius: 16px;
+    padding: 0.5rem 1rem;
+    background: rgba(255,255,255,0.95) !important;
+    box-shadow: 0 6px 18px rgba(0,0,0,0.15);
+  }
+
+  /* 3. Mobile nav panel – full height, clean */
+  .nav-links {
+    width: 80%;
+    max-width: 280px;
+    padding-top: 5rem;
+  }
+
+  /* 4. Hero section: center everything */
+  .hero {
+    min-height: 85vh;
+    padding: 6rem 1.2rem 4rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+  }
+
+  .hero h1 {
+    font-size: 1.9rem;
+    line-height: 1.25;
+    margin-bottom: 0.8rem;
+  }
+
+  .hero p {
+    font-size: 1rem;
+    max-width: 90%;
+    margin: 0 auto 1.2rem;
+  }
+
+  /* 5. Sections: stop floating randomly */
+  .products,
+  .about-section,
+  .cart-wrapper,
+  .contact-grid,
+  footer {
+    width: calc(100% - 2rem);
+    margin: 1.5rem auto;
+    padding: 1.6rem;
+    border-radius: 18px;
+
+    background: rgba(255,255,255,0.9) !important;
+    backdrop-filter: none !important;
+  }
+
+  /* 6. Cards: full width, clean stacking */
+  .product-grid,
+  .card-grid {
+    grid-template-columns: 1fr;
+    gap: 1.4rem;
+  }
+
+  .product-card,
+  .variety-card,
+  .info-card,
+  .cart-item {
+    width: 100%;
+    border-radius: 16px;
+    box-shadow: 0 10px 26px rgba(0,0,0,0.18);
+  }
+
+  /* 7. Cart fixes */
+  .cart-container {
+    padding: 1.8rem 1.4rem;
+    border-radius: 18px;
+  }
+
+  .cart-item {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.6rem;
+  }
+
+  .cart-item button {
+    align-self: flex-end;
+  }
+
+  /* 8. Buttons: finger-friendly */
+  button,
+  .learn-more-btn,
+  .checkout-btn {
+    padding: 0.9rem 1.4rem;
+    border-radius: 26px;
+    font-size: 0.95rem;
+  }
+
+  /* 9. Kill blur & heavy effects on mobile */
+  * {
+    backdrop-filter: none !important;
+    -webkit-backdrop-filter: none !important;
+  }
+}
