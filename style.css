@@ -2385,3 +2385,74 @@ body::before {
     -webkit-backdrop-filter: none !important;
   }
 }
+/* ======================================================
+   RESTORE CLASSIC HERO (STABLE VERSION)
+   ====================================================== */
+
+/* Ensure page background is clean */
+body {
+  background: #f5f8f4 !important;
+}
+
+/* HARD RESET hero */
+.hero {
+  background-image: url("images/hero.jpg") !important;
+  background-size: cover !important;
+  background-position: center center !important;
+  background-repeat: no-repeat !important;
+
+  min-height: 70vh;
+  padding: 6rem 2rem;
+  position: relative;
+}
+
+/* Soft readable overlay (balanced, not heavy) */
+.hero::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    rgba(0, 0, 0, 0.28),
+    rgba(0, 0, 0, 0.38)
+  );
+  z-index: 1;
+}
+
+/* Keep hero text above overlay */
+.hero-content {
+  position: relative;
+  z-index: 2;
+  max-width: 900px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+/* Text clarity */
+.hero h1 {
+  text-shadow: 0 4px 12px rgba(0,0,0,0.45);
+}
+
+.hero p {
+  text-shadow: 0 2px 6px rgba(0,0,0,0.35);
+}
+
+/* REMOVE all global/experimental hero hacks */
+body::before {
+  display: none !important;
+}
+
+.products,
+.about-section,
+.contact-grid,
+.cart-wrapper,
+footer {
+  background: #f5f8f4 !important;
+  box-shadow: none !important;
+  backdrop-filter: none !important;
+}
+
+/* Safety: no clipping */
+.hero,
+.hero * {
+  overflow: visible;
+}
