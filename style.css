@@ -2721,3 +2721,119 @@ header,
 .nav-links * {
   pointer-events: auto !important;
 }
+/* ================= MOBILE NAV – STRICT PHONE ONLY ================= */
+
+/* Hide hamburger by default everywhere */
+.hamburger {
+  display: none;
+}
+
+/* Mobile-only: real touch devices */
+@media (hover: none) and (pointer: coarse) {
+
+  /* Show hamburger */
+  .hamburger {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 26px;
+    height: 18px;
+    cursor: pointer;
+  }
+
+  .hamburger span {
+    height: 3px;
+    width: 100%;
+    background: #145428;
+    border-radius: 2px;
+  }
+
+  /* Mobile slide panel (closed by default) */
+  .nav-links {
+    position: fixed;
+    top: 0;
+    right: -100%;
+    width: 75%;
+    max-width: 300px;
+    height: 100vh;
+
+    background: #ffffff;
+    padding: 5rem 2rem;
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+
+    transition: right 0.3s ease;
+    z-index: 2000;
+
+    box-shadow: -6px 0 20px rgba(0,0,0,0.25);
+  }
+
+  /* Open state */
+  .nav-links.active {
+    right: 0;
+  }
+
+  .nav-links a {
+    font-size: 1.2rem;
+    color: #145428;
+    font-weight: 600;
+    text-decoration: none;
+  }
+}
+/* ======================================================
+   MOBILE NAV – HARD FIX (NO AUTO OPEN, NO BLOCKING)
+   ====================================================== */
+
+/* Prevent menu from blocking taps when closed */
+.nav-links {
+  pointer-events: none;
+}
+
+/* Hamburger is hidden on desktop */
+.hamburger {
+  display: none;
+}
+
+/* ===== MOBILE ONLY ===== */
+@media (max-width: 768px) {
+
+  .hamburger {
+    display: flex;
+    z-index: 3001;
+  }
+
+  /* Nav panel CLOSED state */
+  .nav-links {
+    position: fixed;
+    top: 70px;
+    right: -100%;
+    width: 70%;
+    max-width: 320px;
+    height: calc(100vh - 70px);
+    background: #ffffff;
+    flex-direction: column;
+    gap: 1.6rem;
+    padding: 2.5rem 2rem;
+    box-shadow: -6px 0 24px rgba(0,0,0,0.18);
+    transition: right 0.3s ease;
+    z-index: 3000;
+    pointer-events: none;
+  }
+
+  /* Nav panel OPEN state */
+  .nav-links.active {
+    right: 0;
+    pointer-events: auto;
+  }
+
+  .nav-links li a {
+    font-size: 1.2rem;
+    font-weight: 600;
+  }
+
+  /* Lock background scroll ONLY when menu is open */
+  body.nav-open {
+    overflow: hidden;
+  }
+}
