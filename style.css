@@ -2666,3 +2666,67 @@ footer small {
     padding: 1.2rem;
   }
 }
+/* =====================================================
+   GLOBAL NAV + HERO SAFETY FIX (FINAL)
+   ===================================================== */
+
+/* --- HEADER MUST ALWAYS BE ON TOP --- */
+header {
+  position: sticky !important;
+  top: 0;
+  z-index: 99999 !important;
+}
+
+/* Ensure all nav items & icons stay clickable */
+header * {
+  position: relative;
+  z-index: 100000;
+}
+
+/* --- HERO SHOULD NEVER BLOCK INTERACTION --- */
+.hero {
+  pointer-events: none;
+}
+
+.hero *,
+.hero-content {
+  pointer-events: auto;
+}
+
+/* --- MOBILE-SPECIFIC FIXES --- */
+@media (max-width: 768px) {
+
+  /* Prevent hero from trapping page on Cart */
+  .cart-wrapper .hero,
+  .cart-page .hero {
+    min-height: auto !important;
+    height: auto !important;
+    padding: 3rem 1.2rem !important;
+  }
+
+  /* Reduce heavy overlay on cart hero */
+  .cart-wrapper .hero::after,
+  .cart-page .hero::after {
+    opacity: 0.25 !important;
+  }
+
+  /* Mobile nav drawer must stay above hero */
+  .nav-links {
+    position: fixed !important;
+    inset: 0;
+    z-index: 999999 !important;
+    overflow-y: auto;
+  }
+
+  /* Ensure header area stays visible */
+  body {
+    overflow-x: hidden;
+  }
+}
+
+/* --- SAFETY: PREVENT BACKGROUND LOCKS --- */
+body,
+html {
+  position: relative;
+  overflow-y: auto;
+}
