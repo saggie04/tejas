@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>About Us - Tejas Agri Seeds</title>
+  <link rel="stylesheet" href="style.css"/>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"/>
+</head>
+<body>
+
+<header>
+  <div class="container header-container">
+    <img src="images/logo.jpg" alt="Tejas Agri Seeds Logo" class="logo" />
+    <nav>
+  <!-- Hamburger icon (visible only on mobile) -->
+  <div class="hamburger">
+    <span></span>
+    <span></span>
+    <span></span>
+  </div>
+
+  <!-- Navigation links -->
+  <ul class="nav-links">
+    <li><a href="index.html" class="active">Home</a></li>
+    <li><a href="about.html">About Us</a></li>
+    <li><a href="vegetable-seeds.html">Vegetable Seeds</a></li>
+    <li><a href="contact.html">Contact</a></li>
+  </ul>
+</nav>
+
+    <div class="nav-icons">
+  <i class="fas fa-search"></i>
+  <i class="fas fa-user"></i>
+
+  <a href="cart.html" aria-label="Cart">
+    <i class="fas fa-shopping-cart"></i>
+  </a>
+</div>
+
+
+  </div>
+</header>
+<button id="logoutBtn" class="logout-btn" style="display:none;">
+  Logout
+</button>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-content">
+    <h1>About Tejas Agri Seeds</h1>
+    <p>Committed to quality seeds and farmer prosperity.</p>
+  </div>
+</section>
+
+<section class="about-section container">
+  <h2>About Tejas Agri Seeds</h2>
+  <p class="intro">
+    We are dedicated to empowering farmers with reliable, high-yielding vegetable seeds.
+    Our portfolio is curated to deliver performance in Indian conditions—uniform growth, strong disease tolerance,
+    and excellent shelf life—so you can harvest more with confidence.
+  </p>
+
+  <!-- Goals -->
+  <div class="card-grid">
+    <div class="info-card">
+      <i class="fas fa-seedling"></i>
+      <h3>Our Goals</h3>
+      <ul>
+        <li>Deliver certified, high-germination seeds across India.</li>
+        <li>Introduce improved hybrids and OPVs.</li>
+        <li>Promote sustainable, climate-smart farming practices.</li>
+        <li>Ensure farmer prosperity with quality and support.</li>
+      </ul>
+    </div>
+
+    <div class="info-card">
+      <i class="fas fa-handshake"></i>
+      <h3>Strategies</h3>
+      <ul>
+        <li><strong>Field Demonstrations:</strong> On-ground trials to build trust.</li>
+        <li><strong>Dealer Network:</strong> Strong distribution & timely supply.</li>
+        <li><strong>Quality Assurance:</strong> Batch testing, moisture-proof packaging.</li>
+        <li><strong>Farmer Education:</strong> Guides on sowing, irrigation & pest control.</li>
+        <li><strong>Pricing & Offers:</strong> Combos, discounts, loyalty programs.</li>
+        <li><strong>After-Sales Support:</strong> Helpline & WhatsApp assistance.</li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- Quotes -->
+  <div class="quotes">
+    <blockquote>“The seed you plant today decides the harvest you reap tomorrow.”</blockquote>
+    <blockquote>“Healthy seeds. Healthy fields. Healthy future.”</blockquote>
+    <blockquote>“From seed to success — grow with Tejas.”</blockquote>
+  </div>
+</section>
+
+
+<footer>
+  <div class="container footer-container">
+    © <span id="currentYear"></span> Tejas Agri Seeds. All Rights Reserved.
+
+  </div>
+</footer>
+
+<!-- SEARCH & LOGIN MODALS -->
+<div id="searchModal" class="modal">
+  <div class="modal-content">
+    <button class="close-btn">&times;</button>
+    <h2>Search</h2>
+    <input type="text" id="searchInput" placeholder="Search for vegetables..." />
+    <button class="learn-more-btn">Search</button>
+  </div>
+</div>
+
+<div id="loginModal" class="modal">
+  <div class="modal-content">
+    <button class="close-btn">&times;</button>
+    <h2>Account Login</h2>
+    <form id="loginForm">
+      <label>Email</label>
+      <input type="email" placeholder="you@example.com" required />
+      <label>Password</label>
+      <input type="password" placeholder="Enter password" required />
+      <button type="submit" class="learn-more-btn">Login</button>
+    </form>
+  </div>
+</div>
+<!-- CART MODAL -->
+<div id="cartModal" class="modal">
+  <div class="modal-content">
+    <button class="close-btn" id="closeCart">&times;</button>
+    <h2>Your Cart</h2>
+
+    <div id="cartItems"></div>
+
+    <div class="cart-footer">
+      <button id="checkoutBtn" class="learn-more-btn">
+        Proceed to Buy
+      </button>
+    </div>
+  </div>
+</div>
+<script
+  async
+  crossorigin="anonymous"
+  data-clerk-publishable-key="pk_test_cmVndWxhci1tYWtvLTM5LmNsZXJrLmFjY291bnRzLmRldiQ"
+  src="https://cdn.jsdelivr.net/npm/@clerk/clerk-js@latest/dist/clerk.browser.js">
+</script>
+<script src="script.js"></script>
+</body>
+</html>

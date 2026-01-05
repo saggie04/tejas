@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Your Cart - Tejas Agri Seeds</title>
+
+  <link rel="stylesheet" href="style.css"/>
+  <link rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"/>
+
+  <style>
+    .cart-page {
+      max-width: 900px;
+      margin: 120px auto 40px;
+      background: #fff;
+      padding: 2rem;
+      border-radius: 14px;
+      box-shadow: 0 8px 24px rgba(0,0,0,0.12);
+    }
+
+    .cart-item {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 12px 0;
+      border-bottom: 1px solid #ddd;
+    }
+
+    .cart-item span {
+      font-weight: 600;
+    }
+
+    .cart-item button {
+      background: #c62828;
+      color: #fff;
+      border: none;
+      padding: 6px 10px;
+      border-radius: 6px;
+      cursor: pointer;
+    }
+
+    .cart-actions {
+      margin-top: 2rem;
+      text-align: center;
+    }
+  </style>
+</head>
+
+<body>
+
+<header>
+  <div class="container header-container">
+    <img src="images/logo.jpg" class="logo"/>
+    <nav>
+      <ul class="nav-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html">About Us</a></li>
+        <li><a href="vegetable-seeds.html">Vegetable Seeds</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-content">
+    <h1>Your Cart</h1>
+    <p>Review your selected seeds before placing the order.</p>
+  </div>
+</section>
+
+<section class="cart-page">
+  <section class="cart-wrapper">
+  <div class="cart-container">
+
+    <h2 class="cart-title">Your Cart</h2>
+
+    <div id="cartItems" class="cart-list"></div>
+
+    <div class="cart-summary">
+      <div class="summary-row">
+        <span>Total Items</span>
+        <strong id="itemCount">0</strong>
+      </div>
+
+      <button id="checkoutBtn" class="checkout-btn">
+        Place Order in Whatsapp
+      </button>
+    </div>
+
+  </div>
+</section>
+
+</section>
+<footer>
+  <div class="container footer-container">
+    © <span id="currentYear"></span> Tejas Agri Seeds. All Rights Reserved.
+
+  </div>
+</footer>
+<script src="script.js"></script>
+</body>
+</html>

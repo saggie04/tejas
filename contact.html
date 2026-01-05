@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Contact - Tejas Agri Seeds</title>
+  <link rel="stylesheet" href="style.css"/>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"/>
+</head>
+<body>
+
+<header>
+  <div class="container header-container">
+    <img src="images/logo.jpg" alt="Tejas Agri Seeds Logo" class="logo" />
+    <nav>
+  <!-- Hamburger icon (visible only on mobile) -->
+  <div class="hamburger">
+    <span></span>
+    <span></span>
+    <span></span>
+  </div>
+
+  <!-- Navigation links -->
+  <ul class="nav-links">
+    <li><a href="index.html" class="active">Home</a></li>
+    <li><a href="about.html">About Us</a></li>
+    <li><a href="vegetable-seeds.html">Vegetable Seeds</a></li>
+    <li><a href="contact.html">Contact</a></li>
+  </ul>
+</nav>
+
+    <div class="nav-icons">
+  <i class="fas fa-search"></i>
+  <i class="fas fa-user"></i>
+
+  <a href="cart.html" aria-label="Cart">
+    <i class="fas fa-shopping-cart"></i>
+  </a>
+</div>
+
+  </div>
+</header>
+<button id="logoutBtn" class="logout-btn" style="display:none;">
+  Logout
+</button>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-content">
+    <h1>Contact Us</h1>
+    <p>We’re here to help you grow.</p>
+  </div>
+</section>
+
+<section class="products container">
+  <h2>Get In Touch</h2>
+  <div class="contact-grid">
+    <div class="contact-card">
+      <p><i class="fas fa-phone"></i> <strong>Phone:</strong> 9091168711</p>
+      <p><i class="fas fa-envelope"></i> <strong>Email:</strong> tejas.agriseeds@gmail.com</p>
+      <p><i class="fas fa-map-marker-alt"></i> <strong>Address:</strong> Eastern Bypass, 
+        PS - Bhaktinagar, 
+        PO - Dabgram, 
+        Dist - Jalpaiguri, 
+        WB-734004</p>
+    </div>
+
+    <form id="contactForm" class="contact-form" novalidate>
+      <label>Name</label>
+      <input type="text" name="name" required placeholder="Your name" />
+      <label>Email</label>
+      <input type="email" name="email" required placeholder="you@example.com" />
+      <label>Message</label>
+      <textarea name="message" rows="5" required placeholder="How can we help?"></textarea>
+      <button type="submit" class="learn-more-btn">Send Message</button>
+      <p id="formMsg" class="form-msg" aria-live="polite"></p>
+    </form>
+  </div>
+</section>
+
+<footer>
+  <div class="container footer-container">
+    © <span id="currentYear"></span> Tejas Agri Seeds. All Rights Reserved.
+
+  </div>
+</footer>
+
+<!-- SEARCH & LOGIN MODALS -->
+<div id="searchModal" class="modal">
+  <div class="modal-content">
+    <button class="close-btn">&times;</button>
+    <h2>Search</h2>
+    <input type="text" id="searchInput" placeholder="Search for vegetables..." />
+    <button class="learn-more-btn">Search</button>
+  </div>
+</div>
+
+<div id="loginModal" class="modal">
+  <div class="modal-content">
+    <button class="close-btn">&times;</button>
+    <h2>Account Login</h2>
+    <form id="loginForm">
+      <label>Email</label>
+      <input type="email" placeholder="you@example.com" required />
+      <label>Password</label>
+      <input type="password" placeholder="Enter password" required />
+      <button type="submit" class="learn-more-btn">Login</button>
+    </form>
+  </div>
+</div>
+<!-- CART MODAL -->
+<div id="cartModal" class="modal">
+  <div class="modal-content">
+    <button class="close-btn" id="closeCart">&times;</button>
+    <h2>Your Cart</h2>
+
+    <div id="cartItems"></div>
+
+    <div class="cart-footer">
+      <button id="checkoutBtn" class="learn-more-btn">
+        Proceed to Buy
+      </button>
+    </div>
+  </div>
+</div>
+<script
+  async
+  crossorigin="anonymous"
+  data-clerk-publishable-key="pk_test_cmVndWxhci1tYWtvLTM5LmNsZXJrLmFjY291bnRzLmRldiQ"
+  src="https://cdn.jsdelivr.net/npm/@clerk/clerk-js@latest/dist/clerk.browser.js">
+</script>
+<script src="script.js"></script>
+</body>
+</html>
